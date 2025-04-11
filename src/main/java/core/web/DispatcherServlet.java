@@ -17,6 +17,7 @@ public class DispatcherServlet extends HttpServlet {
     private final Map<String, Controller> controllerMap = new HashMap<>();
     @Override
     public void init() throws ServletException {
+        controllerMap.put("/", new HomeController());
         controllerMap.put("/user/login", new LoginController());
         controllerMap.put("/user/logout", new LogoutController());
         controllerMap.put("/user/userList", new ListUserController());
