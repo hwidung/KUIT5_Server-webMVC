@@ -13,9 +13,9 @@
 <body>
 <div class="container" id="main">
 
-    <main class="form-signin">
+    <main class="form-update">
 
-        <form name="update" method="post" action="/user/update">
+        <form name="update" method="post" action="${pageContext.request.contextPath}/user/update">
             <div class="form-floating">
                 <input type="text" class="form-control" id="userId" name="userId" placeholder="Id" value="${user.userId}" readonly>
                 <label for="userId">User Id</label>

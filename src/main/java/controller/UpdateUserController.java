@@ -19,12 +19,6 @@ public class UpdateUserController extends HttpServlet {
         String name = req.getParameter("name");
         String email = req.getParameter("email");
 
-        User existingUser = MemoryUserRepository.getInstance().findUserById(userId);
-        if (existingUser == null) {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "User not found");
-            return;
-        }
-
         User updateUser = new User(userId, password, name, email);
         MemoryUserRepository.getInstance().changeUserInfo(updateUser);
 
