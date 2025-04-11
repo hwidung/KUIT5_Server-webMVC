@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="../include/header.jspf" %>
+<%@ include file="../include/navigation.jspf" %>
 <!doctype html>
 <html lang="ko">
   <head>
@@ -52,9 +55,6 @@
     </div>
     <div class="container">
       <main class="form-signin">
-        <div>
-          ID와 비밀번호가 틀렸습니다.
-        </div>
         <form name="login" method="post" action="/user/login">
           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
       

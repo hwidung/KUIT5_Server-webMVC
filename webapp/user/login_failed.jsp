@@ -1,3 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="../include/header.jspf" %>
+<%@ include file="../include/navigation.jspf" %>
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KUIT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" id="main">
+    <h2>Q&A</h2>
+    <!-- Content here -->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
 <!doctype html>
 <html lang="ko">
   <head>
@@ -38,20 +59,23 @@
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/index.html" class="nav-link px-2 link-secondary">Q&A</a></li>
+          <li><a href="/index.jsp" class="nav-link px-2 link-secondary">Q&A</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
           <li><a href="/user/userList" class="nav-link px-2 link-dark">User List</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
-          <a href="/user/login.html" type="button" class="btn btn-outline-primary me-2">Login</a>
-          <a href="/user/form.html" type="button" class="btn btn-primary">Sign-up</a>
+          <a href="/user/login.jsp" type="button" class="btn btn-outline-primary me-2">Login</a>
+          <a href="/user/form.jsp" type="button" class="btn btn-primary">Sign-up</a>
         </div>
       </header>
     </div>
     <div class="container">
       <main class="form-signin">
+        <div>
+          ID와 비밀번호가 틀렸습니다.
+        </div>
         <form name="login" method="post" action="/user/login">
           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
       
