@@ -1,6 +1,7 @@
 package controller;
 
 import core.db.MemoryUserRepository;
+import core.web.Controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,9 +13,9 @@ import jwp.model.User;
 import java.io.IOException;
 
 @WebServlet("/user/login")
-public class LoginController extends HttpServlet {
+public class LoginController implements Controller {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId = req.getParameter("userId");
         String password = req.getParameter("password");
 
@@ -25,9 +26,9 @@ public class LoginController extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
 
-            resp.sendRedirect("/"); // 로그인 성공 후 메인 페이지로 리다이렉트
+            return "redirect:/";
         } else {
-            resp.sendRedirect("/user/login.jsp?error=invalid"); // 로그인 실패 시
+            return "/WEB-INF/views/user/login.jsp?error=invalid";
         }
     }
 }
